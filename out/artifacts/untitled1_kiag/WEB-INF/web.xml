@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+
+    <!--一一对应的映射-->
+    <servlet>
+        <servlet-name>HelloS</servlet-name>
+        <servlet-class>ioio.ios</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HelloS</servlet-name>
+
+        <!--请求路径-->
+        <!--通配符是*，尽量不要写/*会把首页吞掉
+        *.xxx前面不能有/-->
+
+        <url-pattern>/qaq</url-pattern>
+    </servlet-mapping>
+
+    <!--优先级
+    指定路径最先，找不到则走默认路径
+    -->
+
+    <servlet>
+        <servlet-name>u</servlet-name>
+        <servlet-class>HelloServlet.Servlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>u</servlet-name>
+        <url-pattern>/*</url-pattern>
+    </servlet-mapping>
+</web-app>
